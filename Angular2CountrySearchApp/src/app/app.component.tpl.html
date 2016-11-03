@@ -1,0 +1,26 @@
+
+
+<div id="container">
+  <div id="dolphinnav">
+    <ul>
+      <li><a href="#" class="current"><span>HOME</span></a></li>
+      <li><a href="#"><span>Country Selector</span></a></li>
+      <li><a target="_blank" href="#"><span>Feedback</span></a></li>
+    </ul>
+  </div>
+</div>
+<hr />
+<div class="formcontainer">
+<form (ngSubmit)="getCountriesByRegion()">
+  
+  <div class="form-group">
+    <label>CONTINENT:</label>
+    <input type="text" [(ngModel)]="region" class="form-control" id="exampleInputEmail1" placeholder="Continent name:" required>
+  </div>
+    <button class="btn btn-primary" type="submit">List the countries</button>
+</form>
+<hr>
+<p style="color:red">{{error}}</p>
+<h1>List of Countries in {{region}}</h1>
+<div *ngFor="#country of countries">{{country.name}}</div>
+</div>
